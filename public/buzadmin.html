@@ -626,6 +626,18 @@ function fixCloudinaryVideo(url) {
 }
 
 
+function fixMediaUrl(url) {
+    if (!url) return "";
+
+    // URL externe OK (Cloudinary, etc.)
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+        return url;
+    }
+
+    // sinon local
+    return "/" + url;
+}
+
 
 
 
@@ -1368,10 +1380,8 @@ function stopAllMedia() {
             question.mediaExplanation2.trim() !== ''
         ) {
 
-            const mediaUrl =
-                question.mediaExplanation2.startsWith('/')
-                    ? question.mediaExplanation2
-                    : '/' + question.mediaExplanation2;
+            const mediaUrl = normalizeCloudinaryVideo(question.mediaExplanation2);
+                
 
             socket.emit('showMediaExplanation2', {
 
