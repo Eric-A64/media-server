@@ -12,15 +12,10 @@
             color: white;
             margin: 0;
             padding: 0;
-
             min-height: 100vh;
-
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-
-            overflow: hidden;
 
             background: linear-gradient(
                 270deg,
@@ -53,268 +48,515 @@
             animation: gradientMove 6s ease infinite;
         }
 
+
+
+
+
+        
+
+
+           
+
         @keyframes gradientMove {
-            0% { background-position: 50% 0%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
-        /* ================= TOP ================= */
-
         #topBanner {
-            width: 100%;
+            width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 0;
+            padding: 10px;
         }
 
         #logoContainer img {
-            width: 150px;
-            animation: pulse 1s infinite;
-            margin-top: 10px;
-        }
+    width: 150px;
+    animation: pulse 1s infinite;
+    margin-top: 50px; /* ajuste la valeur */
+}
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
-        /* ================= MAIN ================= */
+
+
+
+
+
+#mediaExplanationContainer {
+  display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#mediaExplanationContainer img,
+#mediaExplanationContainer video {
+  width: 100%;
+    height: 100%;
+    object-fit: contain; /* ou cover si tu veux remplir sans bandes */
+    border-radius: 0; /* fullscreen propre */
+}
+
+
+
 
         #mainContent {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            flex-grow: 1;
-            padding-top: 20px;
-            box-sizing: border-box;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 100px;
 
-        /* ================= QUESTION ================= */
+}
+
 
         #questionSection {
-            margin-top: 50px;
+  margin-top: 50;
+  background-color: #C64ED9;
+  border-radius: 20px;
+  border: 15px solid #92159E;   /* ligne classique */
+  font-size: 1.2rem;
+  padding: 30px;
+  width: 90%;
+  max-width: 1100px;
+  box-sizing: border-box;
 
-            background-color: #C64ED9;
-            border-radius: 20px;
-            border: 15px solid #92159E;
+/* Effet halo diffus autour de la bordure */
+  box-shadow: 0 0 20px rgba(255,255,255,0.6),
+              0 0 40px rgba(255,255,255,0.3);
+}
 
-            font-size: 1.2rem;
-            padding: 30px;
-
-            width: 90%;
-            max-width: 1100px;
-            box-sizing: border-box;
-
-            box-shadow:
-                0 0 20px rgba(255,255,255,0.6),
-                0 0 40px rgba(255,255,255,0.3);
-        }
 
         #optionsList {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 30px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 15px;
 
-            width: 100%;
-            max-width: 1100px;
-        }
 
-        #optionsList li {
-            background-color: #92159E;
-            padding: 15px 20px;
-            border-radius: 8px;
-            font-size: 2rem;
-            cursor: default;
-            user-select: none;
+       #optionsList li {
+  background-color: #92159E;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 2rem;
+  cursor: default;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-            opacity: 0;
 
-            transition: opacity 0.45s ease, transform 0.45s ease;
+       #optionsList li.show {
+  opacity: 1;
+  transform: translate(0,0) rotate(360deg) scale(1) skew(10deg, 5deg);;
+}
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        #optionsList li.show {
-            opacity: 1;
-            transform: translate(0,0) rotate(360deg) scale(1) skew(10deg, 5deg);
-        }
-
-        /* ================= ANSWER ================= */
 
         #answerSection {
+  display: none;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 60px 40px;
+  width: 90%;
+  max-width: 1200px;
+background-color: #92159E;
+  box-sizing: border-box;
+  background-color: #92159E;
+border: 15px solid #FFFFFF;   /* ligne classique */
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+#answerSection.show {
+  opacity: 1;
+  transform: translate(0,0) rotate(360deg) scale(1) skew(10deg, 5deg);;
+}
+
+
+        #mediaAnswer2Container,
+        #mediaExplanation2Container {
             display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
 
-            margin-top: 10px;
 
-            border-radius: 20px;
-            padding: 60px 40px;
+        #mediaAnswer2Container img,
+        #mediaAnswer2Container video,
+        #mediaExplanation2Container img,
+        #mediaExplanation2Container video {
+            width: 100%;
+    height: 100%;
+    object-fit: contain; /* ou cover si tu veux remplir sans bandes */
+    border-radius: 0; /* fullscreen propre */
+}
 
-            width: 90%;
-            max-width: 1200px;
-
-            background-color: #92159E;
-            border: 15px solid #FFFFFF;
-
-            text-align: center;
-
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-
-            text-shadow: 0 0 5px black;
-        }
-
-        /* ================= SCORE ================= */
+#mediaAnswer2Container,
+#mediaExplanation2Container {
+    background: black;
+}
 
         #scoreContainer {
-            position: fixed;
-            top: 46%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+  position: fixed;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0D4054;
+border: 8px solid #B38402;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 500px;
+  z-index: 1000;
+  display: none;
+/* Effet halo diffus autour de la bordure */
+  box-shadow: 0 0 20px rgba(255,255,255,0.6),
+              0 0 40px rgba(255,255,255,0.3);
+}
 
-            background-color: #0D4054;
-            border: 8px solid #B38402;
-            border-radius: 15px;
+#scoreboard {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;       /* arrondi optionnel pour adoucir le visuel */
+  background-color: #A1A1A1;
+  
+}
 
-            width: 500px;
-            max-width: 800px;
+#scoreboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-            z-index: 1000;
+#scoreboard th, #scoreboard td {
+  border: 3px solid #A03AB0;
+  padding: 8px;
+  text-align: center;
+  font-size: 30px; /* ← ajuste la taille ici */
+  font-weight: bold; /* ← texte en gras */
+  color: white;
+}
+#scoreboard th {
+  background-color: #A03AB0;
+  color: white;
+}
 
-            display: none;
 
-            box-shadow:
-                0 0 20px rgba(255,255,255,0.6),
-                0 0 40px rgba(255,255,255,0.3);
-        }
 
-        #scoreboard {
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #A1A1A1;
-        }
 
-        #scoreboard table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+/* =========================
+   OVERLAY PODIUM FULL SCREEN
+========================= */
 
-        #scoreboard th, #scoreboard td {
-            border: 3px solid #A03AB0;
-            padding: 8px;
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            color: white;
-        }
+#podiumSection {
+    position: fixed;
+    inset: 0;
 
-        #scoreboard th {
-            background-color: #A03AB0;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        /* ================= PODIUM ================= */
+    background: radial-gradient(circle at center,
+        rgba(20, 10, 40, 0.95),
+        rgba(0, 0, 0, 0.98)
+    );
 
-        #podiumSection {
-            position: fixed;
-            inset: 0;
+    z-index: 999999;
+}
 
-            display: none;
 
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+/* =========================
+   TITRE
+========================= */
 
-            background: radial-gradient(circle at center,
-                rgba(20, 10, 40, 0.95),
-                rgba(0, 0, 0, 0.98)
-            );
+#podiumSection h2 {
+    font-size: 3rem;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
 
-            z-index: 999999;
-        }
 
-        #podiumSection ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+/* =========================
+   LISTE SIMPLE (IMPORTANT)
+========================= */
 
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+#podiumSection ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-            width: 100%;
-            max-width: 500px;
-        }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-        #podiumSection li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
 
-            padding: 20px 25px;
-            border-radius: 16px;
 
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
+/* =========================
+   CARDS JOUEURS (SAFE + PRO)
+========================= */
 
-            color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
+#podiumSection li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
+    padding: 20px 25px;
 
-        /* ================= MEDIA ================= */
+    border-radius: 16px;
 
-        #mediaExplanationContainer,
-        #mediaExplanation2Container,
-        #mediaAnswer2Container {
-            display: none;
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            background: black;
-        }
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 
-        #mediaExplanationContainer img,
-        #mediaExplanationContainer video,
-        #mediaExplanation2Container img,
-        #mediaExplanation2Container video,
-        #mediaAnswer2Container img,
-        #mediaAnswer2Container video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    backdrop-filter: blur(10px);
 
-        /* ================= TIMER ================= */
+    color: white;
 
-        #timerDisplay {
-            text-align: center;
-        }
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+    transition: transform 0.2s ease;
+}
+
+
+/* =========================
+   RANG VISUEL (IMPORTANT)
+========================= */
+
+#podiumSection li:nth-child(1) {
+    border-left: 6px solid gold;
+    transform: scale(1.05);
+}
+
+#podiumSection li:nth-child(2) {
+    border-left: 6px solid silver;
+}
+
+#podiumSection li:nth-child(3) {
+    border-left: 6px solid #cd7f32;
+}
+
+
+/* =========================
+   BADGE POSITION
+========================= */
+
+#podiumSection li::before {
+    content: attr(data-rank);
+    margin-right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+
+    background: rgba(255,255,255,0.15);
+}
+
+
+/* =========================
+   HOVER CLEAN
+========================= */
+
+#podiumSection li:hover {
+    transform: scale(1.03);
+}
+
+
+
+#podium {
+    display: none !important;
+}
+
+
+#podiumSection {
+    display: none;
+}
+
+
+        
+        #qrOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+
+/* zone QR */
+#qrOverlay .qrLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* zone waiting room */
+#qrOverlay .qrRight {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  text-align: center;
+}
+
+/* QR code centré */
+#qrcode {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+#timerContainer h3 {
+  margin: 0;
+}
+
+
+#waitingRoomList, #qrPlayerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#waitingRoom {
+    height: 50%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+#waitingRoom {
+  height: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#qrcode canvas {
+  width: 300px;
+  height: 300px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+
+#feedbackFlash {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+#lobbyTop, #lobbyBottom {
+  flex: 1;
+}
+
+#top {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#top {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.player {
+  padding: 10px 28px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  animation: pop 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+
+
 
     </style>
 </head>
 
 <body>
-
 <audio id="globalAudio" preload="auto"></audio>
-
 <div id="topBanner">
     <div id="logoContainer">
-        <img src="Mis-ROND150.png">
+        <img src="https://res.cloudinary.com/dw47smfbb/image/upload/v1779610667/Mis-ROND150_huxl1e.png">
     </div>
 </div>
 
@@ -324,7 +566,7 @@
         <h2 id="questionText">Question en attente...</h2>
         <ul id="optionsList"></ul>
 
-        <div id="timerContainer">
+        <div class="bannerCol" id="timerContainer">
             <h3 id="timerDisplay">⏳ Temps restant : -- s</h3>
         </div>
     </div>
@@ -332,9 +574,12 @@
     <div id="answerSection"></div>
 
     <div id="scoreContainer">
-        <h2 style="text-align:center;">CLASSEMENT PROVISOIRE</h2>
+        <h2><center>CLASSEMENT  PROVISOIRE</center></h2>
         <div id="scoreboard"></div>
     </div>
+
+
+
 
     <div id="podiumSection">
         <h2>🏆 PODIUM</h2>
@@ -342,17 +587,2132 @@
     </div>
 
 </div>
-
 <div id="mediaExplanationContainer"></div>
 <div id="mediaExplanation2Container"></div>
 <div id="mediaAnswer2Container"></div>
 
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/libs/qrcode.min.js"></script>
 
+
 <script>
-/* TON JS EST STRICTEMENT INCHANGÉ */
+let activeScreen = null;
+let globalAudio = new Audio();
+globalAudio.preload = "auto";
+let mediaPriority = 0;
+let currentScreen = "idle";
+let screenToken = 0;
+let uiToken = 0;
+
+const socket = io();
+
+
+
+let lastJoinTime = 0;
+
+function playJoinSound() {
+  if (!soundEnabled) return;
+
+  const now = Date.now();
+  if (now - lastJoinTime < 200) return; // anti spam
+
+  lastJoinTime = now;
+
+  const src = joinSounds[Math.floor(Math.random() * joinSounds.length)];
+  const audio = new Audio(src);
+  audio.classList.add("join-sfx");
+  audio.volume = 1;
+  audio.play().catch(()=>{});
+}
+
+
+
+
+
+function launchConfetti() {
+  confetti({
+    particleCount: 80,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+}
+
+
+
+
+
+
+
+function resetAllUI() {
+
+  if (globalAudio) {
+    globalAudio.pause();
+    globalAudio.currentTime = 0;
+    globalAudio.src = "";
+  }
+
+  document.querySelectorAll("video, audio").forEach(el => {
+    el.pause();
+    el.currentTime = 0;
+    el.src = "";
+  });
+
+}
+  
+
+
+
+
+
+
+
+
+
+
+function resetScreen() {
+
+  stopAllAudio();
+
+  document.querySelectorAll("video, audio").forEach(m => {
+    m.pause();
+    m.currentTime = 0;
+    m.src = "";
+  });
+
+  document.body.className = "";
+}
+
+
+
+function changeScreen(screen) {
+
+    // 1. nettoyage global obligatoire
+    resetScreen();
+
+    // 2. mise à jour écran + token
+    const token = setScreen(screen);
+
+    return token;
+}
+
+
+
+
+
+
+function getPlayerColor(name = "") {
+  let hash = 0;
+
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  const hue = Math.abs(hash) % 360;
+
+  return `hsl(${hue}, 80%, 60%)`;
+}
+
+
+
+
+
+
+function createMediaElement(media) {
+  let el;
+
+ if (typeof media === 'object') {
+
+  if (media.image) {
+    el = document.createElement('img');
+    el.src = media.image;
+  }
+
+  if (media.audio) {
+    playExclusiveSound(media.audio);
+
+    if (!el) { // 👈 IMPORTANT
+      el = document.createElement('audio');
+      el.src = media.audio;
+      el.controls = true;
+    }
+  }
+
+  return el;
+}
+
+  if (media.match(/\.(mp4|webm|ogg)$/i)) {
+    el = document.createElement('video');
+    el.src = media;
+    el.controls = true;
+    el.autoplay = true;
+    
+
+  } else if (media.match(/\.(mp3|wav|ogg)$/i)) {
+    el = document.createElement('audio');
+    el.src = media;
+    el.controls = true;
+    
+
+    playExclusiveSound(media); // 🔥 clé
+
+  } else {
+    el = document.createElement('img');
+    el.src = media;
+  }
+
+  return el;
+}
+
+
+
+
+function startNewScene(mode, callback) {
+
+  // 🧠 RESET PRIORITÉ MÉDIA
+  mediaPriority = 0;
+
+  // 🧨 RESET PODIUM HARD
+  hardResetPodium?.();
+
+  // 🧨 CLEAR GLOBAL OVERLAYS
+  clearAll();
+
+  // 🧨 STOP TIMER
+  clearInterval(countdownInterval);
+
+  // 🧨 STOP AUDIO GLOBAL
+  stopAllAudio();
+
+  // 🧨 RESET AUDIO COURANT
+  if (currentAudio) {
+
+    try {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio.src = "";
+    } catch (e) {
+      console.warn("⚠️ currentAudio reset error:", e);
+    }
+
+    currentAudio = null;
+  }
+
+  // 🧨 RESET GLOBAL AUDIO SAFE
+  if (globalAudio) {
+
+    try {
+      globalAudio.pause();
+      globalAudio.currentTime = 0;
+      globalAudio.src = "";
+      globalAudio.load();
+    } catch (e) {
+      console.warn("⚠️ globalAudio reset error:", e);
+    }
+  }
+
+  // 🧨 STOP TOUS LES MEDIAS DOM
+  document.querySelectorAll('audio, video').forEach(el => {
+
+    try {
+      el.pause();
+      el.currentTime = 0;
+      el.src = "";
+      el.load?.();
+    } catch (e) {
+      console.warn("⚠️ media cleanup error:", e);
+    }
+  });
+
+  // 🧨 RESET UI PRINCIPALE
+  if (questionSection) {
+    questionSection.style.display = 'none';
+  }
+
+  if (answerSection) {
+    answerSection.style.display = 'none';
+  }
+
+  // 🔥 IMPORTANT FIX SCORE SCREEN
+  if (scoreContainer) {
+    scoreContainer.style.display = 'none';
+  }
+
+  // 🧨 RESET MEDIA CONTAINER INLINE
+  if (
+    typeof mediaContainer !== "undefined" &&
+    mediaContainer
+  ) {
+
+    mediaContainer.innerHTML = '';
+    mediaContainer.style.display = 'none';
+    mediaContainer.style.zIndex = '';
+
+    mediaContainer.querySelectorAll('video, audio').forEach(m => {
+
+      try {
+        m.pause();
+        m.currentTime = 0;
+        m.remove();
+      } catch (e) {
+        console.warn("⚠️ mediaContainer cleanup error:", e);
+      }
+    });
+  }
+
+  // 🧨 OVERLAYS FULLSCREEN
+  const mediaExplanation2 =
+    document.getElementById('mediaExplanation2Container');
+
+  const mediaAnswer2 =
+    document.getElementById('mediaAnswer2Container');
+
+  if (mediaExplanation2) {
+
+    mediaExplanation2.innerHTML = '';
+    mediaExplanation2.style.display = 'none';
+    mediaExplanation2.style.zIndex = '';
+    mediaExplanation2.style.position = '';
+    mediaExplanation2.style.top = '';
+    mediaExplanation2.style.left = '';
+    mediaExplanation2.style.width = '';
+    mediaExplanation2.style.height = '';
+
+    mediaExplanation2.querySelectorAll('video, audio').forEach(m => {
+
+      try {
+        m.pause();
+        m.currentTime = 0;
+        m.remove();
+      } catch (e) {
+        console.warn("⚠️ mediaExplanation2 cleanup error:", e);
+      }
+    });
+  }
+
+  if (mediaAnswer2) {
+
+    mediaAnswer2.innerHTML = '';
+    mediaAnswer2.style.display = 'none';
+    mediaAnswer2.style.zIndex = '';
+    mediaAnswer2.style.position = '';
+    mediaAnswer2.style.top = '';
+    mediaAnswer2.style.left = '';
+    mediaAnswer2.style.width = '';
+    mediaAnswer2.style.height = '';
+
+    mediaAnswer2.querySelectorAll('video, audio').forEach(m => {
+
+      try {
+        m.pause();
+        m.currentTime = 0;
+        m.remove();
+      } catch (e) {
+        console.warn("⚠️ mediaAnswer2 cleanup error:", e);
+      }
+    });
+  }
+
+  // 🧨 RESET PODIUM UI
+  if (podiumSection) {
+
+    podiumSection.style.display = 'none';
+    podiumSection.style.zIndex = '';
+    podiumSection.style.position = '';
+    podiumSection.style.transform = '';
+    podiumSection.style.backdropFilter = '';
+
+    if (podiumList) {
+      podiumList.innerHTML = '';
+    }
+  }
+
+  // 🧨 RESET BODY STATE
+  document.body.classList.remove(
+    "correct-answer",
+    "podium",
+    "end-quiz",
+    "static-bg"
+  );
+
+  // 🧨 RESET FLAGS
+  podiumActive = false;
+  scoreScreenActive = false;
+
+  // 🧨 RESET SCREEN STATE
+  currentScreen = "idle";
+
+  // 🧨 RELANCE SAFE FRAME
+  requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+      if (callback) {
+
+        try {
+          callback(mode);
+        } catch (e) {
+          console.error("❌ startNewScene callback error:", e);
+        }
+      }
+    });
+  });
+}
+
+
+
+
+function stopAllAudio() {
+  console.log("🛑 STOP ALL AUDIO");
+
+  // stop audio principal
+  if (globalAudio) {
+    globalAudio.pause();
+    globalAudio.currentTime = 0;
+    globalAudio.src = "";
+  }
+
+  // stop podium
+  if (podiumAudio) {
+    podiumAudio.pause();
+    podiumAudio.currentTime = 0;
+    podiumAudio = null;
+  }
+
+  // stop tous les audio HTML restants
+  document.querySelectorAll('audio:not(.join-sfx)').forEach(a => {
+    a.pause();
+    a.currentTime = 0;
+    a.src = "";
+    a.load();
+  });
+}
+
+
+const questionSection = document.getElementById('questionSection');
+const questionText = document.getElementById('questionText');
+const optionsList = document.getElementById('optionsList');
+const answerSection = document.getElementById('answerSection');
+const scoreboard = document.getElementById('scoreboard');
+const scoreContainer = document.getElementById('scoreContainer');
+
+const timerDisplay = document.getElementById('timerDisplay');
+const podiumSection = document.getElementById('podiumSection');
+const podiumList = document.getElementById('podiumList');
+const mediaContainer = document.getElementById('mediaExplanationContainer');
+
+const qrOverlay = document.getElementById('qrOverlay');
+
+
+const joinSounds = ['join1.mp3','join2.mp3','join3.mp3','join4.mp3', 'join5.mp3'];
+
+if(!mediaContainer) console.warn("mediaContainer missing");
+
+
+let scoreMusic = null;
+let isScoreScene = false;
+let lastQuestion = null,
+    countdownInterval = null,
+    soundEnabled = false,
+    optionTimeouts = [];
+
+
+
+
+const questionSounds = ['question1.mp3','question2.mp3','question3.mp3','question4.mp3','question5.mp3','question6.mp3','question7.mp3','question8.mp3'];
+const responseSounds = ['reponse1.mp3','reponse2.mp3','reponse3.mp3','reponse4.mp3', 'reponse5.mp3'];
+const optionSounds = ['pop1.mp3','pop2.mp3','pop3.mp3','pop4.mp3'];
+
+
+
+const stopScoreMusic = () => {};
+const playScoreMusic = () => {};
+
+
+
+let audioUnlocked = false;
+
+
+
+let podiumAudio = null;
+let qrVisible = false;
+let qrContainer = null;
+let lastPlayers = [];
+let previousPlayers = [];
+let scoreScreenActive = false;
+let podiumActive = false;
+    
+
+
+let sceneId = 0;
+
+
+
+
+
+
+
+
+
+let audioLock = false;
+let currentAudio = null;
+
+function playAudioSafe(src, { priority = 0 } = {}) {
+  if (!soundEnabled) return;
+
+  // stop audio en cours
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
+  currentAudio = new Audio(src);
+  currentAudio.volume = 1;
+
+  audioLock = true;
+
+  currentAudio.play().finally(() => {
+    audioLock = false;
+  });
+}
+
+
+
+
+
+function startCountdown(seconds){
+  let timeLeft = seconds;
+
+  timerDisplay.textContent =
+    `⏳ Temps restant : ${timeLeft}s`;
+
+  timerDisplay.style.display = 'block';
+
+  clearInterval(countdownInterval);
+
+  countdownInterval = setInterval(() => {
+
+    timeLeft--;
+
+    timerDisplay.textContent =
+      timeLeft <= 0
+        ? '⏳ Temps écoulé !'
+        : `⏳ Temps restant : ${timeLeft}s`;
+
+    if(timeLeft <= 0)
+      clearInterval(countdownInterval);
+
+  }, 1000);
+}
+
+
+function showCorrectAnswer() {
+  const flash = document.getElementById("feedbackFlash");
+
+  flash.style.background = "rgba(0,255,0,0.15)";
+  flash.style.opacity = "1";
+
+  setTimeout(() => {
+    flash.style.opacity = "0";
+  }, 500);
+}
+
+function setBodyState(state) {
+  document.body.className = "";
+  document.body.classList.add(state);
+}
+
+
+function getColor(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = hash % 360;
+  return `hsl(${hue}, 80%, 60%)`;
+}
+
+
+
+function showOptionsSequentially(options){
+
+  // ❌ FIX IMPORTANT : fonction inexistante supprimée
+  // clearOptionAnimations();
+
+  optionsList.innerHTML = '';
+
+  const liElements = options.map(opt => {
+    const li = document.createElement('li');
+    li.textContent = opt;
+
+    const dirs = [
+      'translateY(20px)',
+      'translateY(-20px)',
+      'translateX(20px)',
+      'translateX(-20px)'
+    ];
+
+    const rotation = (Math.random() - 0.5) * 10;
+
+    li.style.transform =
+      `${dirs[Math.floor(Math.random()*dirs.length)]}
+       rotate(${rotation}deg)
+       scale(0.98)`;
+
+    li.style.opacity = 0;
+
+    optionsList.appendChild(li);
+
+    return li;
+  });
+
+  const indices = liElements.map((_, i) => i);
+
+  for(let i = indices.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  indices.forEach((idx, order) => {
+    const li = liElements[idx];
+
+    const timeoutId = setTimeout(() => {
+      li.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+      li.style.opacity = 1;
+      li.style.transform = 'translate(0,0) rotate(0deg) scale(1)';
+
+      playSfx(optionSounds[idx % optionSounds.length]);
+
+    }, order * 700);
+
+    optionTimeouts.push(timeoutId);
+  });
+}
+
+
+
+
+function playSfx(src){
+  if(!soundEnabled) return;
+  const audio = new Audio(src);
+  audio.play().catch(err => console.warn(err));
+}
+
+
+
+function stopCurrentAudio() {
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    currentAudio = null;
+  }
+}
+
+
+
+
+function hidePodiumUI() {
+
+mediaPriority = 0;
+
+    // 🧨 RESET CENTRAL (NE PAS OUBLIER)
+    hardResetPodium?.();
+
+    if (!podiumSection) return;
+
+    podiumSection.style.display = "none";
+    podiumSection.style.zIndex = "";
+    podiumSection.style.position = "";
+    podiumSection.style.top = "";
+    podiumSection.style.left = "";
+    podiumSection.style.width = "";
+    podiumSection.style.height = "";
+    podiumSection.style.transform = "";
+    podiumSection.style.backdropFilter = "";
+
+    // 🧨 nettoyage DOM interne (sécurité)
+    podiumList.innerHTML = "";
+podiumSection.style.display = "none";
+
+    if (podiumList) {
+        podiumList.innerHTML = "";
+    }
+}
+
+
+function hardResetPodium() {
+    if (!podiumSection) return;
+
+    podiumSection.style.display = "none";
+    podiumSection.style.position = "";
+    podiumSection.style.zIndex = "";
+    podiumSection.style.transform = "";
+    podiumSection.style.backdropFilter = "";
+
+    document.body.classList.remove("podium");
+}
+
+function stopPodiumAudio() {
+
+  if (!podiumAudio) return;
+
+  try {
+    podiumAudio.pause();
+    podiumAudio.currentTime = 0;
+    podiumAudio.src = "";
+    podiumAudio.load();
+  } catch (e) {
+    console.warn("⚠️ stopPodiumAudio error:", e);
+  }
+
+  podiumAudio = null;
+
+  console.log("🛑 PODIUM AUDIO STOPPED");
+}
+
+
+
+function clearAll() {
+
+mediaPriority = 0;
+
+    if (typeof answerSection !== "undefined" && answerSection) {
+        answerSection.style.display = 'none';
+    }
+
+    function clean(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        el.style.display = 'none';
+        el.innerHTML = '';
+
+        el.querySelectorAll('video, audio').forEach(m => {
+            try {
+                m.pause();
+                m.currentTime = 0;
+                m.remove();
+            } catch (e) {
+                console.warn("clean media error:", e);
+            }
+        });
+    }
+
+    clean("mediaExplanation2Container");
+    clean("mediaAnswer2Container");
+}
+
+
+function playJoinSound() {
+  if (!soundEnabled) return;
+
+  const src = joinSounds[Math.floor(Math.random() * joinSounds.length)];
+
+  const audio = new Audio(src);
+  audio.volume = 1;
+
+  // 🔥 IMPORTANT : ne pas être tué par stopAllAudio
+  audio.classList.add("join-sfx");
+
+  audio.play().catch(err => {
+    console.warn("JOIN SOUND BLOCKED:", err);
+  });
+
+  // auto cleanup
+  audio.onended = () => {
+    audio.src = "";
+  };
+}
+
+
+
+    
+
+function runAt(time, fn) {
+
+    const delay = time - Date.now();
+
+    if (delay <= 0) {
+        fn();
+    } else {
+        setTimeout(fn, delay);
+    }
+}
+
+
+
+
+function normalize(raw) {
+    if (!raw) return null;
+    if (Array.isArray(raw)) raw = raw[0];
+
+    if (typeof raw === "string") return { url: raw };
+
+    const url = raw.url || raw.media || raw.audio || raw.video || null;
+
+    return {
+        url,
+        audio: raw.audio || (url?.match(/\.(mp3|wav|ogg)$/i) ? url : null),
+        video: raw.video || (url?.match(/\.(mp4|webm)$/i) ? url : null),
+        image: raw.image || (url?.match(/\.(jpg|jpeg|png|gif)$/i) ? url : null),
+        executeAt: raw.executeAt || null
+    };
+}
+
+
+function clearScreen() {
+  hideQR(); // OK MAIS maintenant safe
+
+  questionSection.style.display = 'none';
+  answerSection.style.display = 'none';
+
+  
+  
+mediaContainer.innerHTML = '';
+  mediaContainer.style.display = 'none';
+
+}
+
+
+
+
+function unlockAudio() {
+    if (audioUnlocked) return;
+    audioUnlocked = true;
+
+    soundEnabled = true; // 🔥 CRUCIAL
+
+    globalAudio.src = "data:audio/mp3;base64,//uQZAAAA";
+    globalAudio.volume = 0;
+
+    globalAudio.play().catch(() => {});
+}
+
+async function playExclusiveSound(src){
+  if(!soundEnabled) return;
+
+  try {
+    stopCurrentAudio();
+    currentAudio = new Audio(src);
+    await currentAudio.play();
+  } catch (e) {
+    console.warn("SFX blocked:", e);
+  }
+}
+
+
+
+document.addEventListener("click", unlockAudio, { once: true });
+document.addEventListener("touchstart", unlockAudio, { once: true });
+
+
+
+
+function renderMedia(container, raw) {
+
+    const data = normalize(raw);
+    if (!data) return;
+
+    container.innerHTML = "";
+
+    const render = () => {
+
+        // 🎥 VIDEO
+        if (data.video) {
+            const v = document.createElement("video");
+            v.src = data.video;
+            v.autoplay = true;
+            v.controls = true;
+            v.playsInline = true;
+            container.appendChild(v);
+            return;
+        }
+
+        // 🖼 IMAGE
+        if (data.image) {
+            const img = document.createElement("img");
+            img.src = data.image;
+            container.appendChild(img);
+            return;
+        }
+
+        // 🔊 AUDIO (ONLY HERE)
+        if (data.audio) {
+            playAudio(data.audio);
+            return;
+        }
+
+        console.warn("❌ MEDIA NON RECONNU:", data);
+    };
+
+    if (data.executeAt) {
+        const delay = data.executeAt - Date.now();
+        if (delay > 0) setTimeout(render, delay);
+        else render();
+    } else {
+        render();
+    }
+}
+    
+
+function playAudio(src) {
+    if (!src) return;
+
+    globalAudio.pause();
+    globalAudio.currentTime = 0;
+    globalAudio.src = src;
+    globalAudio.load();
+
+    globalAudio.play()
+        .then(() => console.log("🔊 AUDIO PLAY:", src))
+        .catch(err => console.warn("🔇 AUDIO BLOCKED:", err));
+}
+
+globalAudio.onended = () => {
+    console.log("🔊 AUDIO FINI");
+};
+
+
+
+
+
+
+    
+
+
+function clearMedia(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.style.display = "none";
+    el.innerHTML = "";
+
+    el.querySelectorAll("video, audio").forEach(m => {
+        m.pause();
+        m.currentTime = 0;
+        m.remove();
+    });
+}
+
+
+
+
+
+
+
+
+
+socket.on('newBuzzQuestion', (data) => {
+
+    console.log("📨 NEW QUESTION RECU:", data);
+
+    const q = Array.isArray(data)
+        ? data[0]
+        : data;
+
+    if (
+        !q ||
+        typeof q !== 'object' ||
+        (!q.question && !q.answer)
+    ) {
+
+        console.warn("❌ QUESTION VIDE IGNORÉE :", q);
+        return;
+    }
+
+    clearAll();
+
+    lastQuestion = q;
+
+    questionSection.style.display = 'block';
+    questionSection.style.opacity = '1';
+
+    questionText.textContent =
+        q.question || q.answer;
+
+    optionsList.innerHTML = '';
+
+    if (Array.isArray(q.options)) {
+
+        q.options.forEach(o => {
+
+            const li = document.createElement('li');
+
+            li.textContent = o;
+            li.style.opacity = '1';
+
+            optionsList.appendChild(li);
+
+        });
+    }
+});
+
+
+socket.on('stopMedia', () => {
+
+    console.log("🛑 STOP MEDIA GLOBAL");
+
+    // STOP AUDIO DOM
+    document.querySelectorAll('audio').forEach(a => {
+        a.pause();
+        a.currentTime = 0;
+        a.src = "";
+        a.load();
+    });
+
+    // STOP VIDEO DOM
+    document.querySelectorAll('video').forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+        v.src = "";
+        v.load();
+    });
+
+    // 🔥 IMPORTANT : STOP AUDIO GLOBAL QUI POSE PROBLÈME
+    if (globalAudio) {
+        globalAudio.pause();
+        globalAudio.currentTime = 0;
+        globalAudio.src = "";
+    }
+
+    // 🔥 STOP PODIUM AUDIO
+    if (podiumAudio) {
+        podiumAudio.pause();
+        podiumAudio.currentTime = 0;
+        podiumAudio = null;
+    }
+
+});
+
+
+
+
+
+
+socket.on('showCorrectAnswer', (data) => {
+
+  if (!lastQuestion) return;
+
+  const correctIndex = Array.isArray(data) ? data[0] : data;
+  const correctAnswer = lastQuestion.options?.[correctIndex];
+
+  startNewScene("answer", () => {
+
+stopAllAudio();
+
+    document.body.classList.add("correct-answer");
+
+    answerSection.style.display = 'block';
+    answerSection.textContent =
+      `✅ Bonne réponse : ${correctAnswer ?? "?"}`;
+
+    playExclusiveSound(
+      responseSounds[Math.floor(Math.random() * responseSounds.length)]
+    );
+
+    setTimeout(() => {
+      requestAnimationFrame(() => triggerConfettiPro());
+    }, 150);
+
+  });
+});
+
+
+socket.on('showMediaExplanation2', raw => {
+
+mediaPriority = 2; // 👈 PRIORITÉ HAUTE
+
+    stopPodiumAudio();
+    clearAll();
+
+stopAllAudio();
+
+    console.log("📺 RAW MEDIA RECU:", raw);
+
+    if (!raw) return;
+
+    let data = raw;
+
+    if (Array.isArray(data)) {
+        data = data[0];
+    }
+
+    const container =
+        document.getElementById('mediaExplanation2Container');
+
+    container.innerHTML = '';
+    container.style.display = 'flex';
+
+    // =========================
+    // 🔥 PRIORITÉ VISUELLE (FIX PODIUM OVERRIDE)
+    // =========================
+
+    container.style.position = "fixed";
+    container.style.top = "0";
+    container.style.left = "0";
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+
+    // IMPORTANT : inférieur au podium (999999)
+    container.style.zIndex = "1200";
+
+    const executeAt = data.executeAt;
+
+    // =========================
+    // NORMALISATION
+    // =========================
+
+    let url = null;
+    let audio = null;
+    let image = null;
+    let video = null;
+
+    if (typeof data === "string") {
+
+        url = data;
+
+    } else if (typeof data === "object") {
+
+        if (data.url) url = data.url;
+        if (data.audio) audio = data.audio;
+        if (data.image) image = data.image;
+        if (data.video) video = data.video;
+    }
+
+    // =========================
+    // RENDER
+    // =========================
+
+    const render = () => {
+
+        container.innerHTML = '';
+
+        // =========================
+        // VIDEO
+        // =========================
+
+        if (
+            video ||
+            (url && url.match(/\.(mp4|webm)$/i))
+        ) {
+
+            const v = document.createElement('video');
+
+            v.src = video || url;
+            v.autoplay = true;
+            v.controls = true;
+            v.playsInline = true;
+
+            // 🔥 PRIORITÉ VISUELLE
+            v.style.position = "relative";
+            v.style.zIndex = "1200";
+
+            container.appendChild(v);
+
+            return;
+        }
+
+        // =========================
+        // IMAGE
+        // =========================
+
+        if (
+            image ||
+            (url && url.match(/\.(jpg|jpeg|png|gif)$/i))
+        ) {
+
+            const img = document.createElement('img');
+
+            img.src = image || url;
+
+            // 🔥 PRIORITÉ VISUELLE
+            img.style.position = "relative";
+            img.style.zIndex = "1200";
+
+            container.appendChild(img);
+        }
+
+        // =========================
+        // AUDIO
+        // =========================
+
+        if (
+            audio ||
+            (url && url.match(/\.(mp3|wav|ogg)$/i))
+        ) {
+
+            try {
+
+                if (globalAudio) {
+                    globalAudio.pause();
+                    globalAudio.currentTime = 0;
+                }
+
+            } catch (e) {}
+
+            globalAudio.src = audio || url;
+            globalAudio.preload = "auto";
+
+            globalAudio.play().catch(err => {
+                console.warn("🔇 Autoplay bloqué:", err);
+            });
+
+            return;
+        }
+
+        console.warn("❌ MEDIA NON RECONNU:", data);
+    };
+
+    // =========================
+    // SYNCHRO SAFE
+    // =========================
+
+    if (executeAt) {
+
+        const delay = executeAt - Date.now();
+
+        if (delay <= 0) {
+            render();
+        } else {
+            setTimeout(render, delay);
+        }
+
+    } else {
+
+        render();
+    }
+
+});
+
+
+
+
+
+socket.on('showMediaAnswer2', raw => {
+
+    stopPodiumAudio();
+    clearAll();
+
+    console.log("📺 MEDIA RECU:", raw);
+
+    if (!raw) return;
+
+    let data = raw;
+
+    if (Array.isArray(data)) {
+        data = data[0];
+    }
+
+    const container =
+        document.getElementById('mediaAnswer2Container');
+
+    if (!container) {
+        console.warn("❌ mediaAnswer2Container introuvable");
+        return;
+    }
+
+    container.innerHTML = '';
+    container.style.display = 'flex';
+
+    // =========================
+    // 🔥 PRIORITÉ VISUELLE
+    // =========================
+
+    container.style.position = "fixed";
+    container.style.top = "0";
+    container.style.left = "0";
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+
+    // IMPORTANT : inférieur au podium
+    container.style.zIndex = "1000";
+
+    let url = null;
+    let audio = null;
+    let image = null;
+    let video = null;
+
+    // =========================
+    // NORMALISATION
+    // =========================
+
+    if (typeof data === "string") {
+
+        url = data;
+
+    } else if (typeof data === "object" && data !== null) {
+
+        if (data.url) url = data.url;
+        if (data.audio) audio = data.audio;
+        if (data.image) image = data.image;
+        if (data.video) video = data.video;
+    }
+
+    const render = () => {
+
+        // 🔥 IMPORTANT : vérifier DOM toujours connecté
+        if (!container.isConnected) {
+            console.warn("⚠️ mediaAnswer2Container detached");
+            return;
+        }
+
+        container.innerHTML = '';
+
+        // =========================
+        // VIDEO
+        // =========================
+
+        if (
+            video ||
+            (url && url.match(/\.(mp4|webm)$/i))
+        ) {
+
+            const v = document.createElement('video');
+
+            v.src = video || url;
+            v.autoplay = true;
+            v.controls = true;
+            v.playsInline = true;
+
+            // 🔥 PRIORITÉ
+            v.style.position = "relative";
+            v.style.zIndex = "1000";
+
+            container.appendChild(v);
+
+            return;
+        }
+
+        // =========================
+        // IMAGE
+        // =========================
+
+        if (
+            image ||
+            (url && url.match(/\.(jpg|jpeg|png|gif)$/i))
+        ) {
+
+            const img = document.createElement('img');
+
+            img.src = image || url;
+
+            // 🔥 PRIORITÉ
+            img.style.position = "relative";
+            img.style.zIndex = "1000";
+
+            container.appendChild(img);
+        }
+
+        // =========================
+        // AUDIO
+        // =========================
+
+        if (
+            audio ||
+            (url && url.match(/\.(mp3|wav|ogg)$/i))
+        ) {
+
+            const audioSrc = audio || url;
+
+            try {
+
+                // 🔥 HARD RESET SAFE
+                if (globalAudio) {
+
+                    try {
+                        globalAudio.pause();
+                        globalAudio.currentTime = 0;
+                        globalAudio.src = "";
+                        globalAudio.load();
+                    } catch (e) {
+                        console.warn("⚠️ globalAudio reset error:", e);
+                    }
+                }
+
+                // 🔥 NOUVEL OBJET AUDIO (IMPORTANT)
+                globalAudio = new Audio(audioSrc);
+
+                globalAudio.volume = 1;
+                globalAudio.preload = "auto";
+
+                globalAudio.play()
+                    .then(() => {
+                        console.log("🔊 AUDIO PLAY:", audioSrc);
+                    })
+                    .catch(err => {
+                        console.warn("🔇 Autoplay bloqué:", err);
+                    });
+
+            } catch (e) {
+
+                console.warn("❌ AUDIO ERROR:", e);
+            }
+        }
+
+        // =========================
+        // MEDIA NON RECONNU
+        // =========================
+
+        if (
+            !video &&
+            !image &&
+            !audio &&
+            !url
+        ) {
+            console.warn("❌ MEDIA NON RECONNU:", data);
+        }
+    };
+
+    render();
+
+});
+
+
+socket.on('updateScores', (scores) => {
+
+    window.latestScores = scores;
+
+    // IMPORTANT : ne pas écraser si score screen actif
+    if (!scoreScreenActive) {
+
+        if (
+            !scores ||
+            Object.keys(scores).length === 0
+        ) {
+            scoreboard.innerHTML = "<p>Aucun score pour le moment.</p>";
+            return;
+        }
+
+        const sorted = Object.entries(scores)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+
+        const headerRow = document.createElement('tr');
+
+        headerRow.innerHTML = `
+            <th>🏆</th>
+            <th>JOUEURS</th>
+            <th>SCORES</th>
+        `;
+
+        thead.appendChild(headerRow);
+
+        sorted.forEach(([player, score], index) => {
+
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${player}</td>
+                <td>${score}</td>
+            `;
+
+            tbody.appendChild(row);
+
+        });
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        scoreboard.innerHTML = '';
+        scoreboard.appendChild(table);
+    }
+
+});
+
+
+
+
+
+socket.on('showPodium', (data) => {
+
+    console.log("🏆 PODIUM RECU:", data);
+
+    stopAllAudio();
+
+    if (!data) return;
+    if (!Array.isArray(data.podium)) return;
+
+    const podium = data.podium;
+
+    // =========================
+    // 🧨 KILL OVERLAYS CONCURRENTS
+    // =========================
+
+    const mediaAnswer = document.getElementById('mediaAnswer2Container');
+    const mediaExplanation = document.getElementById('mediaExplanation2Container');
+
+    if (mediaAnswer) {
+        mediaAnswer.style.display = "none";
+        mediaAnswer.style.zIndex = "";
+        mediaAnswer.innerHTML = "";
+    }
+
+    if (mediaExplanation) {
+        mediaExplanation.style.display = "none";
+        mediaExplanation.style.zIndex = "";
+        mediaExplanation.innerHTML = "";
+    }
+
+    // =========================
+    // FORCE VISIBILITÉ PODIUM
+    // =========================
+
+    if (typeof podiumSection !== "undefined" && podiumSection) {
+
+        podiumSection.style.position = "fixed";
+        podiumSection.style.display = "flex";
+        podiumSection.style.top = "0";
+        podiumSection.style.left = "0";
+        podiumSection.style.width = "100vw";
+        podiumSection.style.height = "100vh";
+        podiumSection.style.zIndex = "999999";
+
+        podiumSection.style.transform = "translateZ(0)";
+        podiumSection.style.backdropFilter = "blur(8px)";
+    }
+
+    // =========================
+    // LISTE
+    // =========================
+
+    if (typeof podiumList !== "undefined" && podiumList) {
+
+        // 🔥 FIX CRUCIAL : s’assurer que le conteneur existe encore dans le DOM
+        if (!podiumList.isConnected) {
+            console.warn("⚠️ podiumList detached from DOM → skipping render");
+            return;
+        }
+
+        podiumList.innerHTML = podium.map((p, i) => `
+            <li data-rank="${i + 1}">
+                <span>${p.playerName}</span>
+                <span>${p.score} pts</span>
+            </li>
+        `).join('');
+    }
+
+    // =========================
+    // AUDIO PODIUM
+    // =========================
+
+    if (data.playSound) {
+
+        stopAllAudio();
+
+        try {
+
+            if (globalAudio) {
+                try {
+                    globalAudio.pause();
+                    globalAudio.currentTime = 0;
+                    globalAudio.src = "";
+                    globalAudio.load();
+                } catch (e) {}
+            }
+
+            globalAudio = new Audio('/podium.mp3');
+            globalAudio.volume = 1;
+            globalAudio.loop = false;
+
+            globalAudio.play()
+                .catch(err => console.log("AUDIO ERROR:", err));
+
+        } catch (e) {
+            console.log("AUDIO INIT ERROR:", e);
+        }
+    }
+
+    // =========================
+    // UI STATE
+    // =========================
+
+    document.body.classList.remove("static-bg");
+    document.body.classList.add("podium");
+});
+
+
+
+
+
+
+
+
+
+socket.on("endQuiz", () => {
+
+startNewScene();
+
+  document.body.classList.remove(
+    "correct-answer",
+    "podium"
+  );
+
+  document.body.classList.add("end-quiz");
+});
+
+
+
+
+socket.on('showScoreScreen', (scores) => {
+
+    scoreScreenActive = true;
+
+stopAllAudio();
+
+    console.log("📊 SCORE SCREEN RAW =", scores);
+
+    const stopScoreMusic = window.stopScoreMusic || (() => {});
+    const hideQR = window.hideQR || (() => {});
+
+    // =========================================================
+    // 🔥 STOP AUDIO COMPLET (FIX IMPORTANT AJOUTÉ)
+    // =========================================================
+
+    // GLOBAL AUDIO
+    if (globalAudio) {
+        try {
+            globalAudio.pause();
+            globalAudio.currentTime = 0;
+            globalAudio.src = "";
+            globalAudio.load();
+        } catch (e) {
+            console.warn("globalAudio error:", e);
+        }
+    }
+
+    // PODIUM AUDIO
+    if (podiumAudio) {
+        try {
+            podiumAudio.pause();
+            podiumAudio.currentTime = 0;
+            podiumAudio.src = "";
+            podiumAudio.load();
+        } catch (e) {
+            console.warn("podiumAudio error:", e);
+        }
+        podiumAudio = null;
+    }
+
+    // AUDIO DOM RESTANT
+    document.querySelectorAll('audio').forEach(a => {
+        try {
+            a.pause();
+            a.currentTime = 0;
+            a.src = "";
+            a.load();
+        } catch (e) {}
+    });
+
+    // VIDEO DOM (sécurité écran)
+    document.querySelectorAll('video').forEach(v => {
+        try {
+            v.pause();
+            v.currentTime = 0;
+            v.src = "";
+            v.load();
+        } catch (e) {}
+    });
+
+    // =========================================================
+    // LOGIQUE EXISTANTE
+    // =========================================================
+
+    clearMedia("mediaAnswer2Container");
+    clearMedia("mediaExplanation2Container");
+
+    stopScoreMusic();
+    playAudio("score.mp3");
+    hideQR();
+
+    clearInterval(countdownInterval);
+
+questionSection.style.display = 'none';
+answerSection.style.display = 'none';
+
+mediaContainer.style.display = 'none';
+timerDisplay.style.display = 'none';
+
+// 🔥 IMPORTANT
+scoreContainer.style.display = 'block';
+
+document.body.classList.remove("correct-answer");
+    
+
+    let arr = Object.entries(scores || {}).map(([name, score]) => ({
+        name,
+        score: Number(score || 0)
+    }));
+
+    if (arr.length === 0) {
+        scoreboard.innerHTML = "<p>SCORE EN ATTENTE</p>";
+        return;
+    }
+
+    arr.sort((a, b) => b.score - a.score);
+
+    const top = arr.slice(0, 10);
+
+    const table = document.createElement("table");
+    const tbody = document.createElement("tbody");
+
+    top.forEach((p, i) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${i + 1}</td>
+            <td>${p.name}</td>
+            <td>${p.score}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    
+
+
+
+
+    table.innerHTML = `
+        <thead>
+            <tr><th>⭐</th><th>JOUEURS</th><th>SCORE</th></tr>
+        </thead>
+    `;
+
+    table.appendChild(tbody);
+
+    scoreboard.innerHTML = "";
+    scoreboard.appendChild(table);
+});
+
+
+
+
+
+socket.on('hideScoreScreen', () => {
+
+    scoreScreenActive = false;
+
+    console.log("❌ HIDE SCORE SCREEN");
+
+scoreContainer.style.display = 'none';
+
+    // =========================================================
+    // 🔥 STOP AUDIO COMPLET (AJOUT IMPORTANT)
+    // =========================================================
+
+    if (globalAudio) {
+        try {
+            globalAudio.pause();
+            globalAudio.currentTime = 0;
+            globalAudio.src = "";
+            globalAudio.load();
+        } catch (e) {
+            console.warn("globalAudio error:", e);
+        }
+    }
+
+    if (podiumAudio) {
+        try {
+            podiumAudio.pause();
+            podiumAudio.currentTime = 0;
+            podiumAudio.src = "";
+            podiumAudio.load();
+        } catch (e) {
+            console.warn("podiumAudio error:", e);
+        }
+        podiumAudio = null;
+    }
+
+    document.querySelectorAll('audio').forEach(a => {
+        try {
+            a.pause();
+            a.currentTime = 0;
+            a.src = "";
+            a.load();
+        } catch (e) {}
+    });
+
+    document.querySelectorAll('video').forEach(v => {
+        try {
+            v.pause();
+            v.currentTime = 0;
+            v.src = "";
+            v.load();
+        } catch (e) {}
+    });
+
+    // =========================================================
+    // LOGIQUE EXISTANTE
+    // =========================================================
+
+    
+
+    stopAllAudio(); // 🔥 STOP ICI (tu peux le garder MAIS maintenant sécurisé)
+
+});
+
+
+
+
+
+socket.emit("screen:init");
+
+
+socket.on("waitingRoom:snapshot", (players) => {
+
+  lastPlayers = players;
+
+  const list = document.getElementById("waitingRoomList");
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  players.forEach(name => {
+
+    const div = document.createElement("div");
+    div.textContent = name;
+
+    // style base
+    div.style.padding = "10px";
+    div.style.margin = "6px";
+    div.style.borderRadius = "12px";
+    div.style.fontWeight = "bold";
+    div.style.color = "#fff";
+
+    // 🎨 couleur unique par joueur
+    const color = getPlayerColor(name);
+
+    div.style.background = color;
+    div.style.boxShadow = `0 0 10px ${color}`;
+    div.style.border = "2px solid rgba(255,255,255,0.25)";
+
+    list.appendChild(div);
+  });
+});
+
+
+
+
+
+
+
+socket.on('showQRCodeOnScreen', (data) => {
+
+  const url = Array.isArray(data) ? data[0] : data;
+  if (!url) return;
+
+  const qr = document.getElementById('qrOverlay');
+
+  if (!qr) {
+    console.error("❌ qrOverlay introuvable");
+    return;
+  }
+
+  qr.style.display = "flex";
+
+  qr.innerHTML = `
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+<h1>🌐 (Internet) COUPEZ les DONNEES MOBILES</h1>
+<h1>📶 Connection WIFI... "Tenda797340_5G"</h1>
+      <h1>📱 Scannez pour jouer</h1>
+      <div id="qrcode"></div>
+    </div>
+
+    <div id="lobbyBottom" style="flex:1; padding:20px; overflow-y:auto;">
+<h2>👥 Salle d'attente (<span id="playerCount">0</span>)</h2>
+    <div id="waitingRoomList"></div>
+  </div>
+
+  `;
+
+  const qrBox = document.getElementById("qrcode");
+
+  if (!qrBox) {
+    console.error("❌ qrcode introuvable après injection");
+    return;
+  }
+
+  qrBox.innerHTML = "";
+
+  new QRCode(qrBox, {
+    text: url,
+    width: 300,
+    height: 300
+  });
+
+  // ✅ AJOUT UNIQUE ICI (c’est ça que je voulais dire)
+setTimeout(() => {
+
+  const list = document.getElementById("waitingRoomList");
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  if (!window.lastPlayers) return;
+
+  window.lastPlayers.forEach(name => {
+
+    const div = document.createElement("div");
+    div.textContent = name;
+
+    // style commun
+    div.style.padding = "10px";
+    div.style.margin = "6px";
+    div.style.borderRadius = "12px";
+    div.style.fontWeight = "bold";
+    div.style.color = "#fff";
+
+    // 🎨 couleur dynamique (FIX ICI)
+    const color = getPlayerColor(name);
+
+    div.style.background = color;
+    div.style.boxShadow = `0 0 10px ${color}`;
+    div.style.border = "2px solid rgba(255,255,255,0.25)";
+
+    list.appendChild(div);
+  });
+
+}, 0);
+});
+
+
+
+
+socket.on('hidePodium', () => {
+
+    console.log("🧹 HIDE PODIUM");
+
+    startNewScene();
+
+    hidePodiumUI(); // 🔥 AJOUT CRITIQUE
+
+    stopPodiumAudio();
+
+    if (globalAudio) {
+        globalAudio.pause();
+        globalAudio.currentTime = 0;
+    }
+
+    document.querySelectorAll('audio, video').forEach(el => {
+        el.pause();
+        el.currentTime = 0;
+    });
+
+    const mediaAnswer = document.getElementById('mediaAnswer2Container');
+    const mediaExplanation = document.getElementById('mediaExplanation2Container');
+
+    if (mediaAnswer) {
+        mediaAnswer.style.display = "none";
+        mediaAnswer.innerHTML = "";
+        mediaAnswer.style.zIndex = "";
+    }
+
+    if (mediaExplanation) {
+        mediaExplanation.style.display = "none";
+        mediaExplanation.innerHTML = "";
+        mediaExplanation.style.zIndex = "";
+    }
+
+    document.body.classList.remove("podium");
+    document.body.classList.add("static-bg");
+
+});
+
+
+
+
+
+
+socket.on('hideQRCode', () => {
+  const qr = document.getElementById('qrOverlay');
+  if (qr) qr.style.display = "none";
+});
+
+
+socket.on('updateWaitingRoom', (players) => {
+
+  window.lastPlayers = players;
+
+  const list = document.getElementById('waitingRoomList');
+  const counter = document.getElementById('playerCount'); // 👈 AJOUT IMPORTANT
+
+  if (!list) return;
+
+  list.innerHTML = '';
+
+  players.forEach(name => {
+    const div = document.createElement('div');
+    div.textContent = name;
+    div.className = "player";
+
+    // 🎨 COULEUR MULTICOLORE
+    const color = getPlayerColor(name);
+
+    div.style.background = color;
+    div.style.boxShadow = `0 0 12px ${color}`;
+    div.style.border = "2px solid rgba(255,255,255,0.25)";
+    div.style.color = "#fff";
+
+    list.appendChild(div);
+  });
+
+  // =========================
+  // 👥 UPDATE COMPTEUR JOUEURS
+  // =========================
+  if (counter) {
+    counter.textContent = players.length;
+  }
+
+  // =========================
+  // 🔥 DETECT NOUVEAUX JOUEURS
+  // =========================
+
+  const oldSet = new Set(previousPlayers || []);
+  const newPlayers = players.filter(p => !oldSet.has(p));
+
+  newPlayers.forEach(() => playJoinSound());
+
+
+
+  previousPlayers = [...players];
+
+
+
+
+});
+
+
+
+
+socket.onAny((event, ...args) => {
+  console.log("SOCKET RECU:", event, args);
+});
+
+
+
+
+
+
+
+
+
+
+socket.on('newQuestion', question => {
+unlockAudio(); // 🔥 force activation audio
+
+startNewScene();
+
+stopAllAudio();
+
+  lastQuestion = question;
+
+  questionSection.style.display = 'block';
+
+  questionText.textContent = question.question;
+
+  startCountdown(20);
+
+  playExclusiveSound(
+    questionSounds[
+      Math.floor(Math.random() * questionSounds.length)
+    ]
+  );
+
+  showOptionsSequentially(question.options);
+
+});
+
+
+
+socket.on('showMediaExplanation', mediaUrl => {
+
+  // 🧠 PRIORITÉ : bloque si fullscreen actif
+  if (mediaPriority > 1) return;
+  mediaPriority = 1;
+
+  startNewScene();
+  stopAllAudio();
+
+  // 🔥 IMPORTANT : kill overlays 2 (priorité haute)
+  const overlay2 = document.getElementById('mediaExplanation2Container');
+  const overlayAnswer2 = document.getElementById('mediaAnswer2Container');
+
+  if (overlay2) {
+    overlay2.innerHTML = '';
+    overlay2.style.display = 'none';
+    overlay2.style.zIndex = '';
+  }
+
+  if (overlayAnswer2) {
+    overlayAnswer2.innerHTML = '';
+    overlayAnswer2.style.display = 'none';
+    overlayAnswer2.style.zIndex = '';
+  }
+
+  if (!mediaUrl) return;
+
+  mediaContainer.innerHTML = '';
+  mediaContainer.style.display = 'flex';
+
+  const el = createMediaElement(mediaUrl);
+  mediaContainer.appendChild(el);
+});
+
+
+// 🧹 fermeture propre du média inline
+mediaContainer.addEventListener('click', () => {
+  mediaContainer.innerHTML = '';
+  mediaContainer.style.display = 'none';
+
+  // reset priorité si on ferme ce layer
+  if (mediaPriority === 1) {
+    mediaPriority = 0;
+  }
+});
+
+
+// 🧹 clear externe (socket admin / reset forcé)
+socket.on('clearMediaExplanation', () => {
+
+  const eventId = lockUI("clearMediaExplanation");
+
+  mediaContainer.innerHTML = '';
+  mediaContainer.style.display = 'none';
+
+  // reset priorité uniquement si pas fullscreen actif
+  if (mediaPriority === 1) {
+    mediaPriority = 0;
+  }
+});
+
+
+
+
+
+
+
+
 </script>
+
+
+
+<!-- =========================
+     QR OVERLAY + WAITING ROOM
+========================= -->
+
+
+    
+
+      
+
+<div id="qrOverlay" style="display:none;">
+  <div id="qrcode"></div>
+  <div id="waitingRoomList"></div>
+</div> 
+
 
 </body>
 </html>
