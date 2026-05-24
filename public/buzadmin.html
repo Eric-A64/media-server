@@ -618,6 +618,17 @@ window.resetLobby = function () {
 
 
 
+function fixCloudinaryVideo(url) {
+    if (!url.includes("res.cloudinary.com")) return url;
+
+    // force mp4 playback compatible navigateur
+    return url.replace("/upload/", "/upload/f_mp4/");
+}
+
+
+
+
+
     function getExecuteTime() {
 
         return Date.now() + syncOffset;
@@ -1154,32 +1165,33 @@ function showLocalPreview(media) {
     // =========================
     // VIDEO
     // =========================
-    else if (/\.(mp4|webm)$/i.test(lower)) {
+    else if (/\.(mp4|webm|mov)$/i.test(lower)) {
 
-        const video = document.createElement("video");
+    const video = document.createElement("video");
 
-video.src = media;
+    video.src = media;
 
-// ULTRA LIGHT
-video.preload = "metadata";
+    video.controls = true;
+    video.autoplay = false;
+    video.muted = true;
+    video.playsInline = true;
 
-// PAS d'autoplay
-video.controls = true;
+    video.preload = "auto";
 
-// important
-video.muted = true;
-video.playsInline = true;
+    video.style.maxWidth = "100%";
+    video.style.maxHeight = "280px";
+    video.style.borderRadius = "10px";
 
-// optimisation rendering
-video.disablePictureInPicture = true;
+    video.onerror = (e) => {
+        console.error("❌ VIDEO ERROR:", media, e);
+    };
 
-video.style.maxWidth = "100%";
-video.style.maxHeight = "280px";
-video.style.borderRadius = "10px";
+    video.onloadeddata = () => {
+        console.log("✅ VIDEO READY:", media);
+    };
 
-preview.appendChild(video);
-
-        }
+    preview.appendChild(video);
+}
 
 
 
