@@ -1697,20 +1697,20 @@ stopAllAudio();
         ) {
 
             const v = document.createElement('video');
-v.src = video || url;
-v.autoplay = true;
-v.controls = true;
-v.playsInline = true;
 
-container.appendChild(v);
+            v.src = video || url;
+            v.autoplay = true;
+            v.controls = true;
+            v.playsInline = true;
 
-v.addEventListener("loadeddata", () => {
-  v.play().catch(err => {
-    console.warn("VIDEO AUTOPLAY BLOCKED:", err);
-  });
-});
+            // 🔥 PRIORITÉ VISUELLE
+            v.style.position = "relative";
+            v.style.zIndex = "1200";
 
+            container.appendChild(v);
 
+            return;
+        }
 
         // =========================
         // IMAGE
