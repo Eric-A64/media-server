@@ -1697,17 +1697,17 @@ stopAllAudio();
         ) {
 
             const v = document.createElement('video');
+
 v.src = video || url;
 v.autoplay = true;
 v.controls = true;
 v.playsInline = true;
+v.muted = true; // 🔥 OBLIGATOIRE
 
 container.appendChild(v);
 
-v.addEventListener("loadeddata", () => {
-  v.play().catch(err => {
-    console.warn("VIDEO AUTOPLAY BLOCKED:", err);
-  });
+v.play().catch(err => {
+  console.warn("VIDEO AUTOPLAY BLOCKED:", err);
 });
 
     return; // 🔥 IMPORTANT
