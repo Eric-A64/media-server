@@ -1473,6 +1473,21 @@ globalAudio.onended = () => {
 };
 
 
+function ensureAudioUnlocked() {
+
+    if (audioUnlocked) return;
+
+    try {
+        globalAudio.src = "data:audio/mp3;base64,//uQZAAAA";
+        globalAudio.volume = 0;
+        globalAudio.play().catch(() => {});
+    } catch (e) {}
+
+    audioUnlocked = true;
+    soundEnabled = true;
+}
+
+
 
 
 
@@ -1506,16 +1521,15 @@ socket.on('newBuzzQuestion', (data) => {
 
     console.log("📨 NEW QUESTION RECU:", data);
 
-    const q = Array.isArray(data)
-        ? data[0]
-        : data;
+    const q = Array.isArray(data) ? data[0] : data;
 
-    if (
-        !q ||
-        typeof q !== 'object' ||
-        (!q.question && !q.answer)
-    ) {
+    // 🔥 HARD GUARD (IMPORTANT)
+    if (!q || typeof q !== "object") {
+        console.warn("❌ QUESTION INVALIDE IGNORÉE :", q);
+        return;
+    }
 
+    if (!q.question && !q.answer) {
         console.warn("❌ QUESTION VIDE IGNORÉE :", q);
         return;
     }
@@ -1525,24 +1539,16 @@ socket.on('newBuzzQuestion', (data) => {
     lastQuestion = q;
 
     questionSection.style.display = 'block';
-    questionSection.style.opacity = '1';
-
-    questionText.textContent =
-        q.question || q.answer;
+    questionText.textContent = q.question || q.answer;
 
     optionsList.innerHTML = '';
 
     if (Array.isArray(q.options)) {
-
         q.options.forEach(o => {
-
             const li = document.createElement('li');
-
             li.textContent = o;
             li.style.opacity = '1';
-
             optionsList.appendChild(li);
-
         });
     }
 });
@@ -1789,6 +1795,8 @@ stopAllAudio();
 
 
 socket.on('showMediaAnswer2', raw => {
+
+ensureAudioUnlocked(); // 🔥 AJOUT CRUCIAL
 
     stopPodiumAudio();
     clearAll();
