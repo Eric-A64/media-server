@@ -216,7 +216,7 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 <div id="headerRow">
 
     <center><div id="logoContainer">
-        <img src="Mis-ROND90.png" alt="Logo" />
+        <img src="https://res.cloudinary.com/dw47smfbb/image/upload/v1779610664/Mis-ROND90_m68dt2.png" />
 <h3>BUZ-ADMIN</h3></center>  
 
 
@@ -434,7 +434,7 @@ console.log("🟢 DOM READY");
 
 
 
-    socket = io(window.location.origin);
+    socket = io();
 socket.off('buzzQuestionsList');
 
 
@@ -710,7 +710,11 @@ function renderScores(scores) {
 
     }
 
-playerUrl = `${window.location.origin}/player.html`;
+    const localIP = '192.168.0.185';
+    const port = window.location.port;
+
+    playerUrl =
+        `http://${localIP}${port ? ':' + port : ''}/player.html`;
 
     document.getElementById('playerURL').textContent =
         playerUrl;
@@ -849,7 +853,7 @@ socket.onAny((event, data) => {
 
 
     socket.on('buzzQuestionsList', (data) => {
-    console.log("🔥 EVENT buzzQuestionsList RECEIVED", data);
+
     loadedQuestions = Array.isArray(data) ? data : [];
 
     const loadBtn = document.getElementById("loadSelectedQuiz");
@@ -1338,13 +1342,13 @@ function stopAllMedia() {
                         question.mediaImage
                     );
 
-    
+                }
+
+            });
 
             return;
-}
-};
 
-
+        }
 
         // MEDIA SIMPLE
         if (
@@ -1352,37 +1356,29 @@ function stopAllMedia() {
             question.mediaExplanation2.trim() !== ''
         ) {
 
+            const mediaUrl =
+                question.mediaExplanation2.startsWith('/')
+                    ? question.mediaExplanation2
+                    : '/' + question.mediaExplanation2;
 
+            socket.emit('showMediaExplanation2', {
 
+                media: mediaUrl,
+                executeAt
 
+            });
 
+            runAt(executeAt, () => {
 
-            let mediaUrl = question.mediaExplanation2;
+                showLocalPreview(mediaUrl);
 
-// =========================
-// URL CLOUDINARY / EXTERNE
-// =========================
-if (
-    !mediaUrl.startsWith('http://') &&
-    !mediaUrl.startsWith('https://')
-) {
-    mediaUrl = mediaUrl.startsWith('/')
-        ? mediaUrl
-        : '/' + mediaUrl;
-}
+            });
 
-socket.emit('showMediaExplanation2', {
-    media: mediaUrl,
-    executeAt
-});
+            return;
 
-runAt(executeAt, () => {
-    showLocalPreview(mediaUrl);
-});
+        }
 
-return;
-}
-};
+    };
 
 
 
@@ -1556,11 +1552,11 @@ scoreboard.appendChild(table);
 
     qrButton.addEventListener('click', () => {
 
-        const isLocal = location.hostname === "localhost" || location.hostname.startsWith("192.168");
+        const localIP = '192.168.0.185';
+        const port = window.location.port;
 
-const playerUrl = isLocal
-    ? `http://192.168.0.185:${location.port}/player.html`
-    : `${window.location.origin}/player.html`;
+        const playerUrl =
+            `http://${localIP}${port ? ':' + port : ''}/player.html`;
 
         if (!qrScreenVisible) {
 
