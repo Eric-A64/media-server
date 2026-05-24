@@ -1,0 +1,216 @@
+{
+  "1-FRENCH-music": [
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599349/intro-french1_v9bn3d.mp4",
+      "answer": "INTRO       //////////////////////////////////////////",
+      "mediaAnswer2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599342/yellow-buzz_pafzbv.mp4"
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599176/nougaro_y1ltsg.mp4",
+      "answer": "CLAUDE NOUGARO - NOUGAYORK",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594908/Nougaro2_fzdreu.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595323/nougaro2_y85wzq.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595827/angele_rglzgw.mp4",
+      "answer": "ANGELE - LIBRE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593340/angele2_sdftrc.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595259/angele2_ujer95.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599189/souchon_svvvvn.mp4",
+      "answer": "ALAIN SOUCHON - FOULE SENTIMENTALE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595253/souchon2_xy80hu.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595366/souchon2_d5vpln.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779596029/axellered_rec4ta.mp4",
+      "answer": "AXEL RED - SENSUALITE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593636/axellered2_bzfiad.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595277/axellered2_bqfar9.jpg"
+      }
+    },
+{
+      "type": "audio",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594908/obispo_a03163.mp3",
+      "mediaImage": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595406/q14_e0xmaz.jpg",
+      "answer": "PASCAL OBISPO - TOMBE POUR ELLE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595133/obispo2_kajzzu.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595341/obispo2_gpajf0.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779596151/daho_iuwe1w.mp4",
+      "answer": "ETIENNE DAHO - COMME UN IGLOO",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594066/daho2_xips0h.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595298/daho2_ugh2yq.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595637/aznavour_a2yvmv.mp4",
+      "answer": "CHARLES AZNAVOUR - JE M'VOYAIT DEJA",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594345/aznavour2_vsmc14.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595288/aznavour2_ndykp9.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595972/camelia_nqtkof.mp4",
+      "answer": "CAMELIA JORDANA - FACILE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594225/camelia2_qtjtpo.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595268/camelia2_ps6wbu.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599402/polnareff_qjdpro.mp4",
+      "answer": "MICHEL POLNAREFF - ON IRA TOUS AU PARADIS",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595094/polnareff2_cm1upi.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595352/polnareff2_ss3eqn.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599160/l5_jh2gt1.mp4",
+      "answer": "L5 - TOUTES LES FEMMES DE TA VIE",
+      "mediaAnswer2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599436/l52_prajqp.mp4"
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595708/aubert_zrasce.mp4",
+      "answer": "JEAN LOUIS AUBERT - LES PLAGES",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593310/aubert2_nboknl.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595279/aubert2_ubea3p.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598950/gyneco_saqkvj.mp4",
+      "answer": "DOC GYNECO - PASSEMENT DE JAMBES",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594607/gyneco2_phuvxk.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595310/gyneco2_w91mjz.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779599579/pagny_d2xbny.mp4",
+      "answer": "FLORENT PAGNY - SI TU VEUX M'ESSAYER",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594965/pagny2_yqvpdo.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595390/pagny2_yau5ki.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598640/starmania_emjmax.mp4",
+      "answer": "STARMANIA - QUAND ON ARRIVE EN VILLE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595222/starmania2_gfi37m.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595371/starmania2_axfmz7.jpg"
+      }
+    },    
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598518/hardy_iqqvtj.mp4",
+      "answer": "FRANCOISE HARDY - COMMENT TE DIRE ADIEU",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594410/hardy2_tdyioa.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595327/hardy2_lovogm.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779596728/demoiselle_hjohgs.mp4",
+      "answer": "CHRISTOPHE MAE - BELLE DEMOISELLE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594021/demoiselle2_ybv84z.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595336/demoiselle2_ubpurd.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595972/calogero_ydh2um.mp4",
+      "answer": "CALOGERO - JE JOUE DE LA MUSIQUE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593840/calogero2_jq1qam.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595269/calogero2_ibjavo.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598438/lio_me8myq.mp4",
+      "answer": "LIO - BANANA SPLIT",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594629/lio2_ylp1yn.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595324/lio2_vjghvi.jpg"
+      }
+    },
+{
+      "type": "audio",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593757/bauer_gniypr.mp3",
+      "mediaImage": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595342/q1_ml5bss.jpg",
+      "answer": "AXEL BAUER - ETEINS LA LUMIERE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779593724/bauer2_q5au4z.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595258/bauer_bk6sko.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598407/respire_kjcouu.mp4",
+      "answer": "CLARA LUCIANI - RESPIRE ENCORE",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595184/respire2_h8f2up.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595359/respire2_xrllls.jpg"
+      }
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598393/mia_cfkluh.mp4",
+      "answer": "I AM - JE DANSE LE MIA",
+      "mediaAnswer2": {
+        "audio": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779594785/mia2_pwknsd.mp3",
+        "image": "https://res.cloudinary.com/dw47smfbb/image/upload/v1779595339/mia2_gxe6yi.jpg"
+      }
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779595925/boulette_ymhpmb.mp4",
+      "answer": "DIAMS - LA BOULETTE",
+      "mediaAnswer2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598599/boulette2_qnqnf6.mp4"
+    },
+{
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779598093/gabrielle_f8hm8f.mp4",
+      "answer": "JOHNNY HALLYDAY - GABRIELLE",
+      "mediaAnswer2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779596447/gabrielle2_gu5lz1.mp4"
+    },
+    {
+      "type": "video",
+      "mediaExplanation2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779597952/60-80-merci_mzc1k7.mp4",
+      "answer": "FIN DU QUIZZ ///////////////////",
+      "mediaAnswer2": "https://res.cloudinary.com/dw47smfbb/video/upload/v1779597952/60-80-merci_mzc1k7.mp4"
+    }
+  ]
+}
