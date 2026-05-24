@@ -1352,29 +1352,40 @@ function stopAllMedia() {
             question.mediaExplanation2.trim() !== ''
         ) {
 
-            const mediaUrl =
-                question.mediaExplanation2.startsWith('/')
-                    ? question.mediaExplanation2
-                    : '/' + question.mediaExplanation2;
 
-            socket.emit('showMediaExplanation2', {
 
-                media: mediaUrl,
-                executeAt
 
-            });
 
-            runAt(executeAt, () => {
 
-                showLocalPreview(mediaUrl);
+            let mediaUrl = question.mediaExplanation2;
 
-            });
+// =========================
+// URL CLOUDINARY / EXTERNE
+// =========================
+if (
+    !mediaUrl.startsWith('http://') &&
+    !mediaUrl.startsWith('https://')
+) {
 
-            return;
+    mediaUrl = mediaUrl.startsWith('/')
+        ? mediaUrl
+        : '/' + mediaUrl;
+}
 
-        }
+socket.emit('showMediaExplanation2', {
 
-    };
+    media: mediaUrl,
+    executeAt
+
+});
+
+runAt(executeAt, () => {
+
+    showLocalPreview(mediaUrl);
+
+});
+
+return;
 
 
 
