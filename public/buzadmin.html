@@ -1366,26 +1366,22 @@ if (
     !mediaUrl.startsWith('http://') &&
     !mediaUrl.startsWith('https://')
 ) {
-
     mediaUrl = mediaUrl.startsWith('/')
         ? mediaUrl
         : '/' + mediaUrl;
 }
 
 socket.emit('showMediaExplanation2', {
-
     media: mediaUrl,
     executeAt
-
 });
 
 runAt(executeAt, () => {
-
     showLocalPreview(mediaUrl);
-
 });
 
 return;
+}
 
 
 
