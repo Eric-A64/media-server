@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env secrets (IMPORTANT Cloudinary + Render)
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# 🚨 MEDIA LOCAUX (TRÈS IMPORTANT DANS TON CAS)
+public/
