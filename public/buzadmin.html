@@ -640,6 +640,18 @@ function fixMediaUrl(url) {
 
 
 
+function normalizeCloudinaryVideo(url) {
+    if (!url) return "";
+
+    if (url.includes("res.cloudinary.com")) {
+        return url.replace("/upload/", "/upload/f_mp4/");
+    }
+
+    return url;
+}
+
+
+
 
     function getExecuteTime() {
 
@@ -1412,6 +1424,10 @@ function stopAllMedia() {
         if (!question) return;
 
         let payload = question.mediaAnswer2;
+
+if (typeof payload === "object" && payload?.video) {
+    payload = payload.video;
+}
 
         // STRING
         if (typeof payload === 'string') {
