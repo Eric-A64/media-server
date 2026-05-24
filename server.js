@@ -29,6 +29,9 @@ const publicPath = path.join(__dirname, "public");
 
 app.use(express.static(publicPath));
 
+console.log("PUBLIC PATH =", publicPath);
+console.log("FILES =", fs.readdirSync(publicPath));
+
 // ============================
 // INDEX
 // ============================
